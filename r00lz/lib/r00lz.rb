@@ -5,6 +5,7 @@ module R00lz
 
   class App
     def call(env)
+      require "pry";binding.pry
       kl, act = cont_and_act(env)
       text = kl.new(env).send(act)
       [200, { 'Content-Type' =>
